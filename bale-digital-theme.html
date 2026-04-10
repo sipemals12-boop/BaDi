@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bale Digital — OJS Theme Preview</title>
+<style>
+/* ============================================================
+   BALE DIGITAL — Custom Theme CSS untuk OJS 3.3
+   Cara pasang: Login OJS → Settings → Website → Appearance
+                → tab "Style Sheet" → salin bagian CSS ini
+   ============================================================ */
+
+:root {
+  --bd-navy:       #0d2535;
+  --bd-blue:       #1b7eb3;
+  --bd-blue-light: #e8f4fb;
+  --bd-blue-mid:   #155f88;
+  --bd-white:      #ffffff;
+  --bd-bg:         #f4f6f8;
+  --bd-border:     #dde3e9;
+  --bd-text:       #1a2b38;
+  --bd-muted:      #5f7280;
+  --bd-success:    #1d9e75;
+  --bd-warning:    #ba7517;
+  --bd-danger:     #c0392b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bd-bg);
+  color: var(--bd-text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+a { color: var(--bd-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4 { color: var(--bd-navy); font-weight: 500; line-height: 1.3; }
+h1 { font-size: 26px; }
+h2 { font-size: 20px; }
+h3 { font-size: 17px; }
+
+/* --- TOPBAR --- */
+.topbar {
+  background: var(--bd-navy);
+  padding: 0 40px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topbar-brand { color: #fff; font-size: 20px; font-weight: 500; letter-spacing: 0.3px; }
+.topbar-nav { display: flex; gap: 4px; }
+.topbar-nav a {
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.topbar-nav a:hover { background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
+.topbar-right { display: flex; gap: 10px; align-items: center; }
+.topbar-right a {
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 5px;
+  transition: background 0.15s;
+}
+.topbar-right a:hover { background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
+
+/* --- HERO --- */
+.hero {
+  background: var(--bd-navy);
+  padding: 64px 40px;
+  text-align: center;
+  border-bottom: 3px solid var(--bd-blue);
+}
+.hero h1 { color: #fff; font-size: 34px; margin-bottom: 14px; }
+.hero p { color: rgba(255,255,255,0.72); font-size: 16px; max-width: 580px; margin: 0 auto 28px; }
+.hero .btn-group { display: flex; gap: 12px; justify-content: center; }
+
+/* --- TOMBOL --- */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+}
+.btn-primary { background: var(--bd-blue); color: #fff; border: 1px solid var(--bd-blue); }
+.btn-primary:hover { background: var(--bd-blue-mid); text-decoration: none; color: #fff; }
+.btn-outline { background: transparent; color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.35); }
+.btn-outline:hover { background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
+.btn-sm { padding: 6px 14px; font-size: 13px; }
+
+/* --- LAYOUT UTAMA --- */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.main-layout { display: flex; gap: 28px; padding: 32px 0; }
+.content-area { flex: 1; min-width: 0; }
+.sidebar { width: 260px; flex-shrink: 0; }
+
+/* --- SECTION LABEL --- */
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--bd-muted);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--bd-border);
+}
+
+/* --- CARD --- */
+.card {
+  background: var(--bd-white);
+  border: 1px solid var(--bd-border);
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin-bottom: 16px;
+}
+
+/* --- ARTIKEL SUMMARY --- */
+.article-card {
+  background: var(--bd-white);
+  border: 1px solid var(--bd-border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  transition: border-color 0.15s;
+}
+.article-card:hover { border-color: var(--bd-blue); }
+.article-card .art-title { font-size: 16px; font-weight: 500; color: var(--bd-blue); margin-bottom: 5px; }
+.article-card .art-authors { font-size: 13px; color: var(--bd-muted); margin-bottom: 10px; }
+.article-card .art-abstract { font-size: 13px; color: var(--bd-muted); margin-bottom: 14px; line-height: 1.6; }
+.article-card .art-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.article-card .art-meta { font-size: 12px; color: var(--bd-muted); }
+
+/* --- GALLEY BADGE --- */
+.galley {
+  display: inline-block;
+  background: var(--bd-blue);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+.galley:hover { background: var(--bd-blue-mid); color: #fff; text-decoration: none; }
+.galley.html-galley { background: #1d9e75; }
+
+/* --- ISSUE CARD --- */
+.issue-card {
+  background: var(--bd-white);
+  border: 1px solid var(--bd-border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.issue-card .iss-title { font-size: 15px; font-weight: 500; color: var(--bd-navy); }
+.issue-card .iss-meta { font-size: 12px; color: var(--bd-muted); margin-top: 3px; }
+.issue-badge {
+  font-size: 11px; font-weight: 500;
+  padding: 4px 10px; border-radius: 20px;
+  background: var(--bd-blue-light); color: #0c447c;
+  white-space: nowrap;
+}
+
+/* --- SIDEBAR WIDGET --- */
+.widget {
+  background: var(--bd-white);
+  border: 1px solid var(--bd-border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.widget-title {
+  font-size: 12px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.7px;
+  color: var(--bd-muted); margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--bd-border);
+}
+.widget ul { list-style: none; padding: 0; }
+.widget ul li { padding: 5px 0; font-size: 13px; border-bottom: 1px solid var(--bd-border); }
+.widget ul li:last-child { border-bottom: none; }
+.widget ul li a { color: var(--bd-blue); }
+
+/* --- STATS ROW --- */
+.stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+.stat-card { background: var(--bd-white); border: 1px solid var(--bd-border); border-radius: 10px; padding: 16px 18px; text-align: center; }
+.stat-num { font-size: 28px; font-weight: 500; color: var(--bd-navy); }
+.stat-lbl { font-size: 12px; color: var(--bd-muted); margin-top: 2px; }
+
+/* --- BREADCRUMB --- */
+.breadcrumb { font-size: 13px; color: var(--bd-muted); padding: 12px 0; margin-bottom: 4px; }
+.breadcrumb a { color: var(--bd-blue); }
+.breadcrumb span { margin: 0 6px; }
+
+/* --- ALERT --- */
+.alert { border-radius: 8px; padding: 12px 16px; font-size: 14px; margin-bottom: 16px; }
+.alert-info    { background: var(--bd-blue-light); color: #0c447c; }
+.alert-success { background: #e1f5ee; color: #0f6e56; }
+.alert-warning { background: #faeeda; color: #854f0b; }
+
+/* --- PAGINATION --- */
+.pagination { display: flex; gap: 4px; list-style: none; justify-content: center; padding: 20px 0; }
+.pagination li a, .pagination li span {
+  display: block; padding: 7px 13px;
+  border: 1px solid var(--bd-border); border-radius: 6px;
+  font-size: 13px; color: var(--bd-blue); background: var(--bd-white);
+}
+.pagination li.active span { background: var(--bd-blue); border-color: var(--bd-blue); color: #fff; }
+.pagination li a:hover { background: var(--bd-blue-light); text-decoration: none; }
+
+/* --- FORM --- */
+.form-group { margin-bottom: 16px; }
+.form-group label { font-size: 14px; font-weight: 500; color: var(--bd-text); margin-bottom: 5px; display: block; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; border: 1px solid var(--bd-border); border-radius: 6px;
+  padding: 9px 12px; font-size: 14px; color: var(--bd-text);
+  background: var(--bd-white); transition: border-color 0.15s;
+}
+.form-group input:focus, .form-group textarea:focus {
+  border-color: var(--bd-blue); outline: none;
+  box-shadow: 0 0 0 3px rgba(27,126,179,0.12);
+}
+
+/* --- FOOTER --- */
+footer {
+  background: var(--bd-navy);
+  color: rgba(255,255,255,0.65);
+  padding: 36px 40px;
+  font-size: 13px;
+  margin-top: 48px;
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
+footer a { color: rgba(255,255,255,0.8); }
+footer a:hover { color: #fff; text-decoration: none; }
+.footer-brand { color: #fff; font-size: 17px; font-weight: 500; margin-bottom: 6px; }
+.footer-bottom { max-width: 1100px; margin: 20px auto 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 12px; text-align: center; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .main-layout { flex-direction: column; }
+  .sidebar { width: 100%; }
+  .hero { padding: 40px 20px; }
+  .hero h1 { font-size: 26px; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .topbar { padding: 0 16px; }
+  .topbar-nav { display: none; }
+  footer { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-brand">Bale Digital</div>
+  <nav class="topbar-nav">
+    <a href="#">Beranda</a>
+    <a href="#">Tentang</a>
+    <a href="#">Terbitan</a>
+    <a href="#">Pengumuman</a>
+    <a href="#">Submission</a>
+  </nav>
+  <div class="topbar-right">
+    <a href="#">Masuk</a>
+    <a href="#" style="background:var(--bd-blue);border-color:var(--bd-blue);color:#fff;">Daftar</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Bale Digital</h1>
+  <p>Jurnal ilmiah bidang teknologi informasi, sistem informasi, dan ilmu komputer yang diterbitkan secara berkala.</p>
+  <div class="btn-group">
+    <a href="#" class="btn btn-primary">Lihat Terbitan Terkini</a>
+    <a href="#" class="btn btn-outline">Submit Artikel</a>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+  <div class="main-layout">
+
+    <!-- CONTENT -->
+    <div class="content-area">
+
+      <!-- STATS -->
+      <div class="stats-row">
+        <div class="stat-card"><div class="stat-num">48</div><div class="stat-lbl">Total Artikel</div></div>
+        <div class="stat-card"><div class="stat-num">6</div><div class="stat-lbl">Edisi Terbit</div></div>
+        <div class="stat-card"><div class="stat-num">120</div><div class="stat-lbl">Penulis</div></div>
+      </div>
+
+      <div class="alert alert-info">
+        <strong>Call for Papers:</strong> Vol. 2 No. 2 (2025) — batas pengiriman 30 Juni 2025.
+      </div>
+
+      <div class="section-label">Artikel Terbaru</div>
+
+      <div class="article-card">
+        <div class="art-title"><a href="#">Implementasi Machine Learning dalam Sistem Rekomendasi E-Commerce</a></div>
+        <div class="art-authors">Ahmad Fauzi, Siti Rahma &nbsp;·&nbsp; Vol. 2 No. 1 (2025)</div>
+        <div class="art-abstract">Penelitian ini membahas penerapan algoritma collaborative filtering berbasis neural network untuk meningkatkan akurasi sistem rekomendasi produk pada platform e-commerce lokal...</div>
+        <div class="art-footer">
+          <div class="art-meta">Diterima: 10 Jan 2025 &nbsp;·&nbsp; Dipublikasi: 15 Mar 2025</div>
+          <div>
+            <a href="#" class="galley">PDF</a>
+            <a href="#" class="galley html-galley">HTML</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="art-title"><a href="#">Analisis Keamanan Siber pada Infrastruktur Cloud di Indonesia</a></div>
+        <div class="art-authors">Budi Santoso &nbsp;·&nbsp; Vol. 2 No. 1 (2025)</div>
+        <div class="art-abstract">Studi ini menganalisis celah keamanan yang umum ditemukan pada layanan cloud computing yang digunakan oleh instansi pemerintah dan swasta di Indonesia...</div>
+        <div class="art-footer">
+          <div class="art-meta">Diterima: 18 Jan 2025 &nbsp;·&nbsp; Dipublikasi: 20 Mar 2025</div>
+          <div>
+            <a href="#" class="galley">PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="art-title"><a href="#">Optimasi Algoritma Graph Neural Network untuk Data Besar</a></div>
+        <div class="art-authors">Hendra Wijaya, Dewi Lestari &nbsp;·&nbsp; Vol. 1 No. 2 (2024)</div>
+        <div class="art-abstract">Paper ini mengusulkan pendekatan baru dalam optimasi GNN yang mampu memproses dataset skala besar dengan kompleksitas waktu lebih efisien dibanding metode konvensional...</div>
+        <div class="art-footer">
+          <div class="art-meta">Diterima: 5 Nov 2024 &nbsp;·&nbsp; Dipublikasi: 10 Des 2024</div>
+          <div>
+            <a href="#" class="galley">PDF</a>
+            <a href="#" class="galley html-galley">HTML</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGINATION -->
+      <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li class="active"><span>1</span></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="widget">
+        <div class="widget-title">Terbitan Terkini</div>
+        <ul>
+          <li><a href="#">Vol. 2 No. 1 (2025) — Januari 2025</a></li>
+          <li><a href="#">Vol. 1 No. 2 (2024) — Juli 2024</a></li>
+          <li><a href="#">Vol. 1 No. 1 (2024) — Januari 2024</a></li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">Pengumuman</div>
+        <ul>
+          <li><a href="#">Call for Papers Vol. 2 No. 2</a></li>
+          <li><a href="#">Selamat Datang di Bale Digital</a></li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">Fokus & Ruang Lingkup</div>
+        <ul>
+          <li>Sistem Informasi</li>
+          <li>Kecerdasan Buatan</li>
+          <li>Keamanan Siber</li>
+          <li>Rekayasa Perangkat Lunak</li>
+          <li>Data Science</li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">Submit Artikel</div>
+        <p style="font-size:13px;color:var(--bd-muted);margin-bottom:12px;">Kami menerima submission artikel penelitian original dalam bahasa Indonesia maupun Inggris.</p>
+        <a href="#" class="btn btn-primary btn-sm" style="display:block;text-align:center;">Mulai Submission</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Bale Digital</div>
+      <div>Jurnal Ilmu Komputer & Teknologi Informasi</div>
+      <div style="margin-top:6px;">e-ISSN: xxxx-xxxx &nbsp;·&nbsp; p-ISSN: xxxx-xxxx</div>
+    </div>
+    <div>
+      <div style="color:#fff;font-weight:500;margin-bottom:8px;">Tautan</div>
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <a href="#">Kebijakan Privasi</a>
+        <a href="#">Panduan Penulis</a>
+        <a href="#">Tim Editorial</a>
+        <a href="#">Kontak</a>
+      </div>
+    </div>
+    <div>
+      <div style="color:#fff;font-weight:500;margin-bottom:8px;">Terindeks di</div>
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <a href="#">Google Scholar</a>
+        <a href="#">DOAJ</a>
+        <a href="#">Sinta</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Bale Digital. Diterbitkan dengan Open Journal Systems (OJS) 3.3.
+  </div>
+</footer>
+
+</body>
+</html>
